@@ -4,9 +4,42 @@
   переключая тему
 */
 
+.root.theme_light {
+  --bg-color: #fff1f7;
+  --primary-accent-color: #FF8DCB;
+  --secondary-accent-color: #FF0070;
+  --default-content-color: #353430;
+  --accent-bg-content-color: #353430;
+  --bg-image: url(../images/cover-image-light.png);
+}
+
 .page.theme_light {
+  --bg-color: #fff1f7;
+  --primary-accent-color: #FF8DCB;
+  --secondary-accent-color: #FF0070;
+  --default-content-color: #353430;
+  --accent-bg-content-color: #353430;
+  --bg-image: url(../images/cover-image-light.png);
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  .primary-title {
+    color: #FFC2E6;
+    text-shadow: 4px 4px 0 var(--secondary-accent-color);
+  }
 }
+
+
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #fff1f7;
+    --primary-accent-color: #FF8DCB;
+    --secondary-accent-color: #FF0070;
+    --default-content-color: #353430;
+    --accent-bg-content-color: #353430;
+    --bg-image: url(../images/cover-image-light.png);
+  }
+} */
+
