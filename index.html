@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="color-scheme" content="dark light">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Сложно сосредоточиться</title>
   <link rel="stylesheet" href="./styles/style.css" />
@@ -16,6 +17,7 @@
 
 <body class="page">
   <header class="header decorated-zone">
+    <div class="header__decorated-zone" aria-hidden="true">REC</div>
     <nav class="header__theme-menu">
       <ul class="header__theme-menu-list">
         <li class="header__theme-menu-item">
@@ -39,7 +41,7 @@
     <h1 class="primary-title">no focus</h1>
     <div class="header__subtitle-container">
       <p class="header__subtitle-container__text">
-        Что делать, когда не можешь делать ничего
+        Что делать, когда не можешь делать ничего </br>
         Или почему нам так сложно сконцентрироваться, особенно когда очень надо
       </p>
       <div class="header__decoration"></div>
@@ -67,21 +69,21 @@
     </section>
     <section class="what">
       <h2 class="what__title secondary-title">Что снижает концентрацию внимания?</h2>
-      <article class="what__item">
+      <article class="what__item what__item-multitasking">
         <h3 class="secondary-title decoration-title">Многозадачность</h3>
         <p class="text">Как концентрация может снижаться из-за… концентрации? Любая стрессовая ситуация (и резко
           меняющийся мир в целом) заставляет наш мозг постоянно «сканировать» окружающую среду на предмет опасности.
           Например, читать новости вместо работы. Но быть собранными всё время — невозможно. Концентрация — мышца, и она
           может не выдержать, если не давать ей отдохнуть.</p>
       </article>
-      <article class="what__item">
+      <article class="what__item what__item-food">
         <h3 class="secondary-title decoration-title">Еда</h3>
         <p class="text">«Быстрые углеводы» — сахар, белый хлеб, сладости — молниеносно доставляют в мозг энергию и
           помогают ему лучше работать. Но уходит эта энергия также быстро, как и приходит. А мы в результате попадаем на
           «углеводные качели»: как только действие «быстрых углеводов» заканчивается, мы чувствуем усталость и
           сонливость. И хотим ещё больше быстрых углеводов.</p>
       </article>
-      <article class="what__item">
+      <article class="what__item what__item-gadgets">
         <h3 class="secondary-title decoration-title">Гаджеты</h3>
         <p class="text">Да-да, это та самая ситуация, когда на экране ноутбука — код, в наушниках — подкаст, а на
           компьютере фоном — ещё и видео с забавными утятами. В результате мозг пытается переключиться с одной задачи на
@@ -93,7 +95,7 @@
     <section class="how">
       <h2 class="how__title secondary-title">Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх секунд)
       </h2>
-      <div class="how__container">
+      <div class="how__item-group">
         <h3 class="secondary-title decoration-title">5 простых (на самом деле не очень) советов</h3>
         <article class="how__item">
           <h4 class="text decoration-title">Представьте небо и облака</h4>
