@@ -136,7 +136,7 @@
 
 .main__text-link {
   text-shadow: 2px 2px 0 var(--primary-accent-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .why,
