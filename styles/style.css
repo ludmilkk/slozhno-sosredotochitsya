@@ -2,15 +2,14 @@
 
 .page {
   background-image: var(--bg-image);
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .header {
-  block-size: 100vh;
   display: grid;
   grid-template-columns: 1fr minmax(auto, 50%);
   grid-template-rows: 1fr auto 1fr;
@@ -20,6 +19,7 @@
     "subtitle subtitle";
   align-items: center;
   margin-block-end: clamp(40px, 8vw, 80px);
+  block-size: 100vh;
 }
 
 .decorated-zone::before {
@@ -29,8 +29,8 @@
     right: 10px;
     width: 25px;
     height: 25px;
-    border-top: 1px solid var(--primary-accent-color); /* Верхняя граница */
-    border-right: 1px solid var(--primary-accent-color); /* Правая граница */
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
   }
 
 .decorated-zone::after {
@@ -40,8 +40,8 @@
     left: 10px;
     width: 25px;
     height: 25px;
-    border-bottom: 1px solid var(--primary-accent-color); /* Верхняя граница */
-    border-left: 1px solid var(--primary-accent-color); /* Правая граница */
+    border-bottom: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
   }
 
 .header__decorated-zone {
@@ -52,15 +52,15 @@
 }
 
 .header__decorated-zone::after {
+  content: "";
   display: inline-block;
-  inline-size: 9px;
-  block-size: 9px;
-  background-color: var(--primary-accent-color);
+  margin-inline-start: 10px;
   border-radius: 50%;
   vertical-align: middle;
   box-shadow: 0px 0px 4px var(--primary-accent-color);
-  content: "";
-  margin-inline-start: 10px;
+  background-color: var(--primary-accent-color);
+  inline-size: 9px;
+  block-size: 9px;
 }
 
 .header__theme-menu {
@@ -76,30 +76,40 @@
 }
 
 .header__theme-menu-button {
-  font-size: inherit;
+  border: none;
+  padding-inline: 13px;
+  padding-block: 1.5px;
+  color: var(--dynamic-typography-base-highlight-color-default);
   font-weight: inherit;
+  font-size: inherit;
   line-height: inherit;
-  color: var(--primary-accent-color);
   text-transform: lowercase;
   background-color: transparent;
-  border: none;
-  padding-block: 1.5px;
-  padding-inline: 13px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border-color: color-mix(in srgb, var(--dynamic-typography-base-highlight-color-default) 40%, transparent);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--border-color);
+  outline: none;
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--primary-accent-color);
+  border: 1px solid var(--border-color);
   pointer-events: none;
 }
 
 .primary-title {
-  font-size: var(--dynamic-typography-title-font-size);
-  font-weight: var(--dynamic-typography-title-font-weight);
-  line-height: var(--dynamic-typography-title-line-height);
-  color: var(--secondary-accent-color);
-  text-shadow: 4px 4px 0 var(--primary-accent-color);
-  text-transform: lowercase;
   grid-area: title;
+  color: var(--dynamic-typography-title-color-default);
+  font-weight: var(--dynamic-typography-title-font-weight);
+  font-size: var(--dynamic-typography-title-font-size);
+  line-height: var(--dynamic-typography-title-line-height);
+  text-transform: lowercase;
+  text-shadow: 4px 4px 0 var(--primary-accent-color);
 }
 
 .header__subtitle-container {
@@ -107,36 +117,44 @@
 }
 
 .header__subtitle-container__text {
-  font-size: var(--dynamic-typography-base-highlight-font-size);
-  font-weight: var(--dynamic-typography-base-highlight-font-weight);
-  line-height: var(--dynamic-typography-base-highlight-line-height);
-  color: var(--accent-bg-content-color);
-  background-color: var(--primary-accent-color);
   align-self: end;
+  color: var(--dynamic-typography-base-highlight-color-reverted);
+  font-weight: var(--dynamic-typography-base-highlight-font-weight);
+  font-size: var(--dynamic-typography-base-highlight-font-size);
+  line-height: var(--dynamic-typography-base-highlight-line-height);
+  background-color: var(--primary-accent-color);
 }
 
 .secondary-title {
-  font-size: var(--dynamic-typography-base-highlight-font-size);
+  color: var(--dynamic-typography-base-highlight-color-default);
   font-weight: var(--dynamic-typography-base-highlight-font-weight);
+  font-size: var(--dynamic-typography-base-highlight-font-size);
   line-height: var(--dynamic-typography-base-highlight-line-height);
-  color: var(--primary-accent-color);
 }
 
 .text {
-  font-size: var(--dynamic-typography-base-font-size);
+  color: var(--dynamic-typography-base-color-default);
   font-weight: var(--dynamic-typography-base-font-weight);
+  font-size: var(--dynamic-typography-base-font-size);
   line-height: var(--dynamic-typography-base-line-height);
-  color: var(--default-content-color);
 }
 
 .decoration-title {
+  color: var(--dynamic-typography-base-highlight-color-reverted);
   background-color: var(--primary-accent-color);
-  color: var(--accent-bg-content-color);
 }
 
 .main__text-link {
-  text-shadow: 2px 2px 0 var(--primary-accent-color);
   text-decoration: none;
+  text-shadow: 2px 2px 0 var(--primary-accent-color);
+}
+
+.main__text-link:hover {
+  border-bottom: 1px solid var(--dynamic-typography-base-color-default);
+}
+
+.main__text-link:focus-visible {
+  outline: 1px solid var(--dynamic-typography-base-color-default);
 }
 
 .why,
@@ -168,16 +186,16 @@
 }
 
 .pictures__image {
+  object-fit: cover;
   inline-size: 100%;
   block-size: 100%;
-  object-fit: cover;
 }
 
 .footer {
-  block-size: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  block-size: 100vh;
 }
 
 @media (min-width: 768px) {
@@ -257,8 +275,8 @@
   }
 
   .header__theme-menu {
-    align-self: start;
     justify-self: center;
+    align-self: start;
   }
 
   .how,
