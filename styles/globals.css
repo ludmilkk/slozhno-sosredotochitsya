@@ -11,7 +11,7 @@ body {
   max-inline-size: 1440px;
   min-inline-size: 375px;
   margin: 0 auto;
-  font-family: var(--dynamic-typography-font-family);
+  font-family: var(--dynamic-typography-font-family), monospace;
   font-size: var(--dynamic-typography-base-font-size);
   font-weight: var(--dynamic-typography-base-font-weight);
   line-height: var(--dynamic-typography-base-line-height);
@@ -42,7 +42,6 @@ picture {
 
 button,
 a {
-  color: var(--dynamic-typography-base-color-default);
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;

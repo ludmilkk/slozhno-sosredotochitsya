@@ -15,7 +15,7 @@
   --bg-image: url(../images/cover-image-light.png);
 
   .header__decorated-zone {
-    display: none;
+    visibility: hidden;
   }
 }
 
@@ -30,7 +30,8 @@
     --border-color: #353430;
     --bg-image: url(../images/cover-image-light.png);
   }
-
-
+  .header__decorated-zone {
+    visibility: hidden;
+  }
 }
 

@@ -17,6 +17,10 @@
   --primary-accent-color: #FF0070;
   --border-color: #FF0070;
   --bg-image: url(../images/cover-image-dark.png);
+
+  .header__decorated-zone {
+    visibility: visible;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
